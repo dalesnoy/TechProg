@@ -3,7 +3,9 @@
 #include <string>
 
 using namespace std;
-
+//Объявить структуру Node с полями name, 
+// age и salary типов string, int и double соответственно, 
+//а также указателем на следующий элемент списка.
 struct Node {
     string name;
     int age;
@@ -11,19 +13,23 @@ struct Node {
     Node* next;
 };
 
-
+//Объявить класс LinkedList с приватным полем head типа Node*,
+// указывающим на голову списка.
 class LinkedList {
 private:
     Node* head;
-    Node* createNode(string name, int age, double salary) {
-        Node* newNode = new Node();
+    Node* createNode(string name, int age, double salary) { //Описать в классе метод createNode,
+        Node* newNode = new Node(); //который возвращает указатель на новый элемент
+        // типа Node со значениями переданных аргументов.
         newNode->name = name;
-        newNode->age = age;
+        newNode->age = age;  
         newNode->salary = salary;
         newNode->next = NULL;
         return newNode;
     }
 
+    
+   //Описать в классе конструктор LinkedList, который инициализирует head значением NULL.
 public:
     LinkedList() {
         head = NULL;
